@@ -1,0 +1,18 @@
+# feature dimension size of point-wise encoding pre-downsample layers.
+# set to 0 to disable initial point-wise encoding
+base_feature_dim: 0
+
+# feature dimension sizes of downsampling layers
+local_feature_dims: [32, 64, 128, 256]
+
+# global latent code dimension size
+global_feature_dim: 512
+
+# PointConv parameters
+k: 16
+bottleneck: 4
+c_mid: 4
+use_vi: false
+
+# don't include normals as input by default
+include_normals: false

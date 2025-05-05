@@ -1,0 +1,46 @@
+# Top level config for pretraining the object-level completion model
+
+defaults:
+    - base
+    - model: robust_seedformer
+    - dataloader@train_dataloader: shapenet55
+    - dataloader@val_dataloader: shapenet55
+    - optimizer: adam
+    - scheduler: step
+    - _self_
+
+# name of experiment
+experiment_name: Pretrain_${model.model_name}_${train_dataloader.dataset.dataset_name}_${datetime:0}
+
+# training dataloader
+train_dataloader:
+    split: train
+    augmentations: [rotation]
+    num_workers: 10
+    batch_size: 20
+    dataset:
+        model_list_path: ${.data_root}/ShapeNet55_train_list.json
+
+# validation dataloader
+val_dataloader:
+    split: val
+    dataset:
+        model_list_path: ${.data_root}/ShapeNet55_val_list.json
+
+# number of epochs to train for
+num_epochs: 150
+
+# update initial learning rate
+optimizer:
+    lr: 1e-4
+
+# update learning rate decay
+scheduler:
+    gamma: 0.75
+    step_size: 50
+
+# loss weights
+lam_comp: 1
+lam_part: 1
+lam_normal: 1e-2
+lam_center: 1

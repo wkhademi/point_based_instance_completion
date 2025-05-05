@@ -1,0 +1,17 @@
+# dimension size of partial input's global latent code
+global_dim: ${model.partial_encoder.global_feature_dim}
+
+# Upsample Transformer parameters:
+# partial point local feature dimension size
+in_dim: ${index:${model.partial_encoder.local_feature_dims},-1}
+# Patch Seeds feature dimension size
+out_dim: 256
+# hidden dimension size
+hidden_dim: 64
+# neighborhood for local attention
+k: 20
+# produce 2x as many Patch Seeds as there are downsampled partial points
+up_factor: 2
+
+# do not apply tanh activation on seed coordinates
+use_tanh: false

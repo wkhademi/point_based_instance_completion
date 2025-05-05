@@ -1,0 +1,10 @@
+# scheduler to use for updating learning rate
+type: ???
+
+# index of last epoch (used for setting up lr when resuming training)
+last_epoch: -1
+
+warmup:
+    use: false
+    multiplier: 1.0
+    total_epoch: 10

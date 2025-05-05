@@ -1,0 +1,15 @@
+defaults:
+    - base_scheduler
+    - _self_
+
+# scheduler to use for updating learning rate
+type: "ExponentialLR"
+
+# multiplicative factor of learning rate decay
+gamma: 0.99
+
+# warmup scheduler settings
+warmup:
+    use: true  # use warmup
+    multiplier: 1.0
+    total_epoch: 10  # perform warmup throughout first 10 epochs

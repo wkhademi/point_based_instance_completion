@@ -1,0 +1,12 @@
+defaults:
+    - base
+    - _self_
+
+# name of dataset
+dataset_name: Mask3D
+
+# path to root of data directory
+data_root: ./data/ScanWCF
+
+# path to Mask3D predictions
+mask3d_data_root: ./data/Mask3D_predictions/decoder_-1

@@ -1,0 +1,45 @@
+# Top level config for training the scene-level completion model
+
+defaults:
+    - base
+    - model: sccnet
+    - dataloader@train_dataloader: scanwcf
+    - dataloader@val_dataloader: scanwcf
+    - optimizer: adam
+    - scheduler: step
+    - _self_
+
+# name of experiment
+experiment_name: Train_${model.model_name}_${train_dataloader.dataset.dataset_name}_${datetime:0}
+
+# load in model weights from pre-trained object completion model
+pretrained_path: ./experiments/Pretrain_RobustSeedFormer_ShapeNet55_2025-02-13_00-15/ckpts/ckpt_best.pth
+
+# training dataloader
+train_dataloader:
+    split: train
+    augmentations: [rotation]
+
+# validation dataloader
+val_dataloader:
+    split: val
+    max_batch_size: 56
+    batch_size: 1
+
+# number of epochs to train for
+num_epochs: 200
+
+# update initial learning rate
+optimizer:
+    lr: 1e-4
+
+# update learning rate decay
+scheduler:
+    gamma: 0.75
+    step_size: 50
+
+# loss weights
+lam_comp: 1
+lam_part: 1
+lam_normal: 1e-2
+lam_center: 1

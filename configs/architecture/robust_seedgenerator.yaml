@@ -1,0 +1,19 @@
+# dimension size of partial input's global latent code
+global_dim: ${model.partial_encoder.global_feature_dim}
+# partial point local feature dimension size
+in_dim: ${index:${model.partial_encoder.local_feature_dims},-1}
+# Patch Seeds feature dimension size
+out_dim: 256
+
+# number of transformer blocks
+num_blocks: 4
+# transformer token dimension size
+embed_dim: 384
+# number of attention heads
+num_heads: 8
+# dropout probability on self attention
+attn_drop: 0.0
+# dropout probability on residual connection
+res_drop: 0.0 
+# produce 2x as many Patch Seeds as there are downsampled partial points
+up_factor: 2

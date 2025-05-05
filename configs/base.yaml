@@ -1,0 +1,23 @@
+# name of experiment
+experiment_name: ???
+
+# whether to load in a saved model checkpoint for the experiment
+load_ckpt: False
+
+# which model checkpoint to load in (last or best)
+ckpt_version: last
+
+# GPU IDs to use for running (cuda:0 by default)
+device_ids: [0]
+
+# whether to train or test model
+mode: train
+
+# number of epochs to train for
+num_epochs: 100
+
+# how often to save model
+save_model_freq: 1
+
+# how often to perform validation
+validate_freq: 10

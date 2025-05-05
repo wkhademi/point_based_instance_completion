@@ -1,0 +1,18 @@
+defaults:
+    - base_scheduler
+    - _self_
+
+# scheduler to use for updating learning rate
+type: "LambdaLR"
+
+# parameters for lambda function that controls learning rate
+lambda_cfg:
+    decay_step: 21  # number of epochs between each decay step
+    lr_decay: 0.76  # controls rate of decay
+    lowest_decay: 0.02  # min lr = lowest_decay * lr
+
+# warmup scheduler settings
+warmup:
+    use: true  # use warmup
+    multiplier: 1.0
+    total_epoch: 10  # perform warmup throughout first 10 epochs

@@ -1,0 +1,19 @@
+defaults:
+    - base_optimizer
+    - _self_
+
+# optimization algorithm to use
+type: "AdamW"
+
+# learning rate
+lr: 0.001
+
+# running average coefficients
+beta1: 0.9
+beta2: 0.999
+
+# amount of weight decay on params
+weight_decay: 0.01
+
+# whether to use AMSGrad variant
+amsgrad: false

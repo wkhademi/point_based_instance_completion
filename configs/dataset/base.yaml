@@ -1,0 +1,5 @@
+# name of dataset
+dataset_name: ???
+
+# path to root of data directory
+data_root: ???

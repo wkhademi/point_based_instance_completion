@@ -1,0 +1,7 @@
+defaults:
+    - /architecture@partial_encoder: disco
+    - /architecture@seed_generator: seedgenerator
+    - /architecture@completion_decoder: completiondecoder
+
+# name of model
+model_name: SeedFormer

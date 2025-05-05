@@ -1,0 +1,21 @@
+defaults:
+    - /architecture@partial_encoder: disco
+    - /architecture@seed_generator: constrained_seedgenerator
+    - /architecture@completion_decoder: completiondecoder
+
+# name of model
+model_name: SCCNet
+
+partial_encoder:
+    # use VI-PointConv in encoder layers
+    use_vi: true
+
+    # include normals as input to encoder
+    include_normals: true
+
+completion_decoder:
+    # use a more robust upsampler (adds global attention to upsample layers)
+    robust_upsampler: true
+
+    # predict surface normals of finest resolution completion
+    predict_normals: true

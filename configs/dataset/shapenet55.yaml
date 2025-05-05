@@ -1,0 +1,15 @@
+defaults:
+    - base
+    - _self_
+
+# name of dataset
+dataset_name: ShapeNet55
+
+# path to root of data directory
+data_root: ./data/ShapeNet55
+
+# path to list of object models to use for training
+model_list_path: ???
+
+# path to camera intrinsics used for generating depth maps
+intrinsics_path: ${.data_root}/intrinsics.txt

@@ -1,0 +1,8 @@
+# number of worker processes for data loading
+num_workers: 10
+
+# batch size for training
+batch_size: 12
+
+# data split
+split: train

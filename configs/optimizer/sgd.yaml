@@ -1,0 +1,21 @@
+defaults:
+    - base_optimizer
+    - _self_
+
+# optimization algorithm to use
+type: "SGD"
+
+# learning rate
+lr: 0.001
+
+# momentum factor
+momentum: 0.0
+
+# dampening factor
+dampening: 0.0
+
+# amount of weight decay on parameters
+weight_decay: 0.0
+
+# whether to use Nesterov momentum
+nesterov: false

@@ -1,0 +1,27 @@
+# Factors to upsample number of points by at each upsample layer
+up_factors: [1, 2, 2]
+
+# Feature dimension of input features and upsampled features
+dim: ${model.seed_generator.out_dim}
+
+# Feature dimension used in attention mechanism
+hidden_dim: 64
+
+# Neighborhood use for local attention in Upsample Transformer
+k: 20
+
+# Used to scale offset prediction of upsample layer by. 
+# Scaling factor = (1. / radius**i), for the i-th upsample layer.
+radius: 1
+
+# Parameters for PointConv interpolation layer in upsample layer
+interpolation_params:
+    k: 3
+    c_mid: 4
+    bottleneck: 4
+
+# Do not use robust upsampling (adds global attention layers to upsampler)
+robust_upsampler: false
+
+# Do not predict surface normals of finest resolution completion
+predict_normals: false

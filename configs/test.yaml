@@ -1,0 +1,21 @@
+defaults:
+    - base
+    - model: sccnet
+    - dataloader@train_dataloader: scanwcf
+    - dataloader@test_dataloader: scanwcf
+    - _self_
+
+# name of experiment containing scene completion model checkpoint
+experiment_name: Train_SCCNet_ScanWCF_2025-02-17_21-24
+
+# run model in test/eval mode
+mode: test
+
+# load saved checkpoint
+load_ckpt: true
+
+# test dataloader
+test_dataloader:
+    split: test
+    max_batch_size: 56
+    batch_size: 1

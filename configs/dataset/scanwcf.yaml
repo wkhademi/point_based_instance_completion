@@ -1,0 +1,9 @@
+defaults:
+    - base
+    - _self_
+
+# name of dataset
+dataset_name: ScanWCF
+
+# path to root of data directory
+data_root: ./data/ScanWCF

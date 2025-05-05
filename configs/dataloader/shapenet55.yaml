@@ -1,0 +1,23 @@
+defaults:
+    - base
+    - ../dataset@dataset: shapenet55
+    - _self_
+
+# number of partial views to include as 'different' samples per object. If set
+# to -1, vary this value between 1-20 based on number of objects in category
+num_views_per_category: -1
+
+# types of augmentation to perform on partial input
+augmentations: [scale, rotation, translation]
+
+# number of partial input points
+num_input_points: 1024
+
+# number of points to downsample input points to
+input_downsample_points: [1024, 512, 256, 128]
+
+# number of GT points for completion loss
+num_gt_points: 2048
+
+# number of points to downsample GT points to
+gt_downsample_points: [1024, 512, 256]

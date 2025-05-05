@@ -1,0 +1,34 @@
+defaults:
+    - base
+    - ../dataset@dataset: mask3d
+    - _self_
+
+# number of worker processes for data loading
+num_workers: 10
+
+# batch size for training
+batch_size: 18
+
+# number of partial inputs generated from scan
+num_renderings: 2
+
+# number of partial input points per object
+num_input_points: 1024
+
+# number of points to downsample input points to
+input_downsample_points: [1024, 512, 256, 128]
+
+# number of GT points per object for completion loss
+num_gt_points: 2048
+
+# number of points to downsample GT points to
+gt_downsample_points: [1024, 512, 256]
+
+# number of free space points per object for completion loss
+num_free_space_points: 8192
+
+# number of occupied space points per object for completion loss
+num_occupied_space_points: 8192
+
+# trim off objects from scene if more than certain number
+max_batch_size: 18

@@ -1,0 +1,37 @@
+defaults:
+    - base
+    - ../dataset@dataset: scanwcf
+    - _self_
+
+# number of worker processes for data loading
+num_workers: 10
+
+# batch size for training
+batch_size: 18
+
+# types of augmentation to perform on partial input
+augmentations: [scale, rotation, translation]
+
+# number of partial inputs generated from scan
+num_renderings: 2
+
+# number of partial input points per object
+num_input_points: 1024
+
+# number of points to downsample input points to
+input_downsample_points: [1024, 512, 256, 128]
+
+# number of GT points per object for completion loss
+num_gt_points: 2048
+
+# number of points to downsample GT points to
+gt_downsample_points: [1024, 512, 256]
+
+# max number of free space points
+num_free_space_points: 8192
+
+# max number of occupied space points
+num_occupied_space_points: 8192
+
+# trim off objects from scene if more than certain number
+max_batch_size: 18
