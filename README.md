@@ -140,9 +140,9 @@ python evaluation/scene_completion_evaluation.py --data_dir ./data/ScanWCF --pre
 ```
 
 # Acknowledgements
-Some parts of the code are borrowed from other works. We thank the authors for their work:
+Some parts of the code rely on other works. We thank the authors for their work:
 - [NKSR](https://github.com/nv-tlabs/NKSR)
 - [Mask3D](https://github.com/JonasSchult/Mask3D)
 - [SeedFormer](https://github.com/hrzhou2/seedformer)
-- [DIMR](https://github.com/ashawkey/dimr)
-- [PCN](https://github.com/wentaoyuan/pcn)
+- [DIMR](https://github.com/ashawkey/dimr) (Evaluation scripts only. These scripts are covered under Apache 2.0 license.)
+- [PCN](https://github.com/wentaoyuan/pcn) 
